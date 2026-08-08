@@ -1,240 +1,57 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Backend Developer - Java, Python, Spring e Soluções Scaláveis.">
-    <title>Theuzz Dev | Backend Portfolio</title>
-    
+    <meta name="description" content="Portfólio de Matheus Nascimento, desenvolvedor Backend focado em Java, Python, APIs e bancos de dados.">
+    <meta name="theme-color" content="#0d1117">
+    <title>Matheus Nascimento | Backend Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { mono: ['"Fira Code"', 'monospace'] },
-                    colors: {
-                        'bg-main': '#0a0a0a',
-                        'surface': '#111111',
-                        'accent': '#ffffff',
-                        'muted': '#888888',
-                        'primary': '#22c55e'
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        body {
-            background-color: #0a0a0a;
-            color: #e5e5e5;
-            background-image: radial-gradient(circle at top, #1a1a1a 0%, #0a0a0a 100%);
-        }
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0a0a0a; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
-        
-        .cursor-blink { animation: blink 1s step-end infinite; }
-        @keyframes blink { 50% { opacity: 0; } }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(15px);
-            transition: all 0.4s ease-out;
-        }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        /* Aumenta o tamanho dos ícones ao passar o mouse */
-        .tech-icon { transition: transform 0.2s; }
-        .tech-icon:hover { transform: scale(1.1); }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="font-mono antialiased selection:bg-primary selection:text-black">
-
-    <nav class="fixed w-full top-0 z-50 bg-bg-main/90 backdrop-blur-sm border-b border-zinc-800/50">
-        <div class="max-w-5xl mx-auto px-6 h-14 flex justify-between items-center">
-            <a href="#" class="font-bold tracking-tighter text-white">THEUZZ<span class="text-primary">.DEV</span></a>
-            <div class="space-x-6 text-xs font-bold hidden md:flex items-center text-zinc-400">
-                <a href="#projects" class="hover:text-white transition-colors">PROJETOS</a>
-                <a href="#skills" class="hover:text-white transition-colors">STACK</a>
-                <a href="#contato" class="bg-white text-black px-4 py-1.5 hover:bg-zinc-200 transition-colors">CONTATAR</a>
+<body>
+    <div class="noise"></div>
+    <div class="github-grid"></div>
+    <header class="topbar">
+        <a class="brand" href="#inicio" aria-label="Início"><span class="brand-mark"><i data-lucide="terminal"></i></span><span>mazinn444</span></a>
+        <nav class="menu" aria-label="Navegação principal"><a href="#sobre">Sobre</a><a href="#stack">Stack</a><a href="#projetos">Projetos</a><a href="#contato">Contato</a></nav>
+        <button class="theme-switch" id="themeSwitch" type="button" aria-label="Mudar tema" title="Mudar tema"><i data-lucide="sun"></i></button>
+    </header>
+    <main>
+        <section class="hero section-shell" id="inicio">
+            <div class="hero-copy">
+                <div class="eyebrow"><span class="status-dot"></span> disponível para oportunidades</div>
+                <h1>Matheus<br><span>Nascimento</span></h1>
+                <div class="hero-role"><span>~/backend</span><strong id="typingTarget"></strong><b>_</b></div>
+                <p class="hero-text">Construo APIs, aplicações e sistemas com foco em código limpo, desempenho e soluções que fazem sentido para o problema.</p>
+                <div class="hero-actions"><a class="button button-primary" href="#projetos"><i data-lucide="code-2"></i> Ver projetos</a><a class="button button-ghost" href="https://github.com/devmatheus32" target="_blank" rel="noreferrer"><i data-lucide="github"></i> GitHub</a></div>
+                <div class="hero-meta"><span><i data-lucide="calendar-days"></i> Programando desde 2022</span><span><i data-lucide="map-pin"></i> Brasil</span></div>
             </div>
-        </div>
-    </nav>
-
-    <main class="max-w-5xl mx-auto px-6">
-        
-        <header class="min-h-[85vh] flex flex-col justify-center items-start pt-20">
-            <div class="space-y-4 w-full">
-                <p class="text-primary text-sm font-bold reveal">/// BACKEND DEVELOPER</p>
-                
-                <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-white reveal leading-tight">
-                    Matheus Nascimento
-                </h1>
-                
-                <div class="text-lg md:text-xl text-zinc-400 reveal h-8 flex items-center">
-                    <span class="mr-2">></span> 
-                    <span id="typewriter"></span><span class="cursor-blink text-primary">_</span>
-                </div>
-
-                <p class="max-w-xl text-muted text-sm leading-relaxed reveal pt-2">
-                    Especialista em criar arquiteturas sustentáveis e APIs de alta performance. 
-                    Transformo requisitos complexos em código limpo, testável e escalável.
-                </p>
-                
-                <div class="pt-8 flex flex-wrap gap-4 reveal">
-                    <a href="https://github.com/mazinn444" target="_blank" class="border border-zinc-700 bg-surface text-white px-8 py-3 font-bold text-sm hover:border-white hover:bg-zinc-800 transition-all flex items-center gap-3">
-                        <i class="devicon-github-original text-xl"></i>
-                        VER GITHUB
-                    </a>
-                </div>
-            </div>
-        </header>
-
-        <section id="projects" class="py-16 border-t border-zinc-800">
-            <h2 class="text-2xl font-bold mb-8 flex items-center gap-3 reveal">
-                <span class="text-primary text-sm">01.</span> Projetos em Destaque
-            </h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <article class="reveal group border border-zinc-800 bg-surface p-6 hover:border-zinc-600 transition-all duration-300">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="flex gap-3 text-2xl">
-                            <i class="devicon-java-plain colored"></i>
-                            <i class="devicon-lua-plain text-blue-400"></i>
-                        </div>
-                        <a href="https://github.com/mazinn444/MoonGUI" target="_blank" class="text-zinc-500 hover:text-white"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">MoonGUI</h3>
-                    <p class="text-muted text-sm mb-6 h-12 overflow-hidden">
-                        Biblioteca que atua como compilador de GUI, transformando scripts Lua em interfaces nativas JavaFX.
-                    </p>
-                    <div class="text-xs text-zinc-500 font-mono border-t border-zinc-800 pt-3">
-                        > Interoperabilidade Java/Lua
-                    </div>
-                </article>
-                
-                <article class="reveal border border-zinc-800 bg-surface p-6 opacity-50 flex items-center justify-center">
-                    <p class="text-sm text-muted flex items-center gap-2">
-                        <i class="devicon-spring-original"></i> Em desenvolvimento...
-                    </p>
-                </article>
+            <div class="terminal-card">
+                <div class="terminal-head"><span></span><span></span><span></span><label>matheus@dev: ~</label></div>
+                <div class="terminal-body"><div><span class="terminal-prompt">$</span> whoami</div><p>Matheus Nascimento</p><div><span class="terminal-prompt">$</span> cat focus.txt</div><p>backend · APIs · databases · performance</p><div><span class="terminal-prompt">$</span> stack --main</div><p><span class="green">Java</span> · <span class="blue">Python</span> · <span class="purple">TypeScript</span></p><div><span class="terminal-prompt">$</span> status</div><p class="terminal-status"><span class="status-dot"></span> building something useful</p></div>
             </div>
         </section>
-
-        <section id="skills" class="py-16 border-t border-zinc-800">
-            <h2 class="text-2xl font-bold mb-8 flex items-center gap-3 reveal">
-                <span class="text-primary text-sm">02.</span> Tech Stack
-            </h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
-                
-                <div class="p-6 border border-zinc-800 bg-surface hover:border-zinc-600 transition-colors">
-                    <strong class="block text-white mb-6 text-sm tracking-widest border-b border-zinc-800 pb-2">LINGUAGENS</strong>
-                    <div class="flex flex-wrap gap-6 justify-center md:justify-start">
-                        <div class="flex flex-col items-center gap-2 tech-icon" title="Java">
-                            <i class="devicon-java-plain colored text-4xl"></i>
-                            <span class="text-[10px] text-muted">Java</span>
-                        </div>
-                        <div class="flex flex-col items-center gap-2 tech-icon" title="Python">
-                            <i class="devicon-python-plain colored text-4xl"></i>
-                            <span class="text-[10px] text-muted">Python</span>
-                        </div>
-                        <div class="flex flex-col items-center gap-2 tech-icon" title="JavaScript">
-                            <i class="devicon-javascript-plain colored text-4xl"></i>
-                            <span class="text-[10px] text-muted">JS</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-6 border border-zinc-800 bg-surface hover:border-zinc-600 transition-colors">
-                    <strong class="block text-white mb-6 text-sm tracking-widest border-b border-zinc-800 pb-2">TOOLS</strong>
-                    <div class="flex flex-wrap gap-6 justify-center md:justify-start">
-                        <div class="flex flex-col items-center gap-2 tech-icon" title="Git">
-                            <i class="devicon-git-plain colored text-4xl"></i>
-                            <span class="text-[10px] text-muted">Git</span>
-                        </div>
-                        <div class="flex flex-col items-center gap-2 tech-icon" title="Docker">
-                            <i class="devicon-docker-plain colored text-4xl"></i>
-                            <span class="text-[10px] text-muted">Docker</span>
-                        </div>
-                        <div class="flex flex-col items-center gap-2 tech-icon" title="Postman">
-                            <i class="devicon-postman-plain colored text-4xl"></i>
-                            <span class="text-[10px] text-muted">Postman</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-6 border border-zinc-800 bg-surface hover:border-zinc-600 transition-colors">
-                    <strong class="block text-white mb-6 text-sm tracking-widest border-b border-zinc-800 pb-2">OS / IDE</strong>
-                    <div class="flex flex-wrap gap-6 justify-center md:justify-start">
-                        <div class="flex flex-col items-center gap-2 tech-icon" title="VS Code">
-                            <i class="devicon-vscode-plain colored text-4xl"></i>
-                            <span class="text-[10px] text-muted">VSCode</span>
-                        </div>
-                        <div class="flex flex-col items-center gap-2 tech-icon" title="IntelliJ">
-                            <i class="devicon-intellij-plain colored text-4xl"></i>
-                            <span class="text-[10px] text-muted">IntelliJ</span>
-                        </div>
-                        <div class="flex flex-col items-center gap-2 tech-icon" title="Linux">
-                            <i class="devicon-linux-plain text-white text-4xl"></i>
-                            <span class="text-[10px] text-muted">Linux</span>
-                        </div>
-                        <div class="flex flex-col items-center gap-2 tech-icon" title="Windows">
-                            <i class="devicon-windows11-original text-4xl"></i> <span class="text-[10px] text-muted">Win</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+        <section class="section-shell content-section" id="sobre">
+            <div class="section-heading"><span>01</span><h2>Sobre mim</h2></div>
+            <div class="about-layout"><div class="about-text"><p>Minha trajetória na programação começou no final de 2022. Desde então, venho desenvolvendo projetos para desktop e web, aprendendo na prática e melhorando a qualidade, desempenho e organização do meu código.</p><p>Meu foco é <strong>Backend</strong>, principalmente com Java e Python. Trabalho com APIs, bancos de dados, arquitetura de aplicações e integração entre sistemas. Também gosto de explorar novas tecnologias quando elas resolvem melhor um problema.</p><p>Cada projeto me ajudou a evoluir em lógica, análise e resolução de problemas. Hoje busco transformar ideias em software simples de entender, manter e evoluir.</p></div><div class="about-facts"><div class="fact"><span>01</span><strong>Backend</strong><small>APIs e sistemas</small></div><div class="fact"><span>02</span><strong>Performance</strong><small>otimização e arquitetura</small></div><div class="fact"><span>03</span><strong>Aprendizado</strong><small>projetos na prática</small></div></div></div>
         </section>
-
-        <section id="contato" class="py-20 border-t border-zinc-800 text-center">
-            <h2 class="text-3xl font-bold text-white mb-6 reveal">Interessado?</h2>
-            <p class="text-muted mb-8 max-w-md mx-auto reveal">Estou disponível para novas oportunidades. Mande um "Hello World" e vamos conversar sobre código.</p>
-            <a href="mailto:matheus2019souz@gmail.com" class="inline-block bg-primary text-black px-8 py-4 font-bold tracking-wide hover:bg-green-400 transition-colors reveal">
-                ENVIAR EMAIL AGORA
-            </a>
+        <section class="section-shell content-section" id="stack">
+            <div class="section-heading"><span>02</span><h2>Stack</h2></div>
+            <div class="stack-layout"><div class="stack-intro"><p>Ferramentas que fazem parte do meu dia a dia e tecnologias que já usei em projetos.</p><div class="stack-command"><span>$</span> ls ~/skills</div></div><div class="skill-cloud"><span class="skill featured">Java</span><span class="skill featured">Python</span><span class="skill">JavaScript</span><span class="skill">TypeScript</span><span class="skill">Kotlin</span><span class="skill">C#</span><span class="skill">Lua</span><span class="skill featured">Spring Boot</span><span class="skill">Flask</span><span class="skill featured">FastAPI</span><span class="skill">Node.js</span><span class="skill">JavaFX</span><span class="skill">FXGL</span><span class="skill">libGDX</span><span class="skill">React</span><span class="skill">Next.js</span><span class="skill">Electron</span><span class="skill featured">PostgreSQL</span><span class="skill featured">MySQL</span><span class="skill">SQLite</span><span class="skill">Docker</span><span class="skill">Git</span><span class="skill">GitHub</span><span class="skill">Linux</span><span class="skill">Windows</span><span class="skill">Maven</span><span class="skill">Gradle</span><span class="skill">Postman</span><span class="skill">VS Code</span><span class="skill">IntelliJ IDEA</span><span class="skill">AI</span></div></div>
         </section>
-
+        <section class="section-shell content-section" id="projetos">
+            <div class="section-heading"><span>03</span><h2>Projetos</h2><a href="https://github.com/devmatheus32?tab=repositories" target="_blank" rel="noreferrer">ver todos <i data-lucide="arrow-up-right"></i></a></div>
+            <div class="project-feature"><div class="project-index">01</div><div class="project-main"><div class="project-top"><span class="project-type">JAVA / LUA</span><a href="https://github.com/devmatheus32/MoonGUI" target="_blank" rel="noreferrer" aria-label="Abrir MoonGUI"><i data-lucide="external-link"></i></a></div><h3>MoonGUI</h3><p>Framework Java que permite criar interfaces com Lua, conectando a linguagem a uma camada de UI de forma simples. Um projeto focado em interoperabilidade, arquitetura e experimentação.</p><div class="project-tags"><span>Java</span><span>Lua</span><span>JavaFX</span><span>Framework</span></div><a class="project-link" href="https://github.com/devmatheus32/MoonGUI" target="_blank" rel="noreferrer">Explorar projeto <i data-lucide="arrow-right"></i></a></div><div class="project-side-code"><span>MoonGUI</span><span class="code-muted">↳ Java</span><span class="code-muted">↳ Lua</span><span class="code-green">↳ UI</span><span class="code-muted">↳ JVM</span></div></div>
+            <div class="github-projects" id="githubProjects"></div>
+        </section>
+        <section class="section-shell content-section stats-section"><div class="github-stat-card"><i data-lucide="git-commit-horizontal"></i><strong id="commitCount">--</strong><span>commits públicos</span></div><div class="github-stat-card"><i data-lucide="folder-git-2"></i><strong id="repoCount">--</strong><span>repositórios</span></div><div class="github-stat-card"><i data-lucide="star"></i><strong id="starCount">--</strong><span>estrelas</span></div><div class="github-stat-card"><i data-lucide="users"></i><strong id="followerCount">--</strong><span>seguidores</span></div></section>
+        <section class="section-shell contact-section" id="contato"><div class="contact-terminal"><span class="contact-label">~/contact</span><h2>Vamos construir<br><em>alguma coisa?</em></h2><p>Se você tem um projeto, uma ideia ou só quer trocar uma ideia sobre tecnologia, pode me chamar.</p><div class="contact-actions"><a class="button button-primary" href="https://github.com/devmatheus32" target="_blank" rel="noreferrer"><i data-lucide="github"></i> GitHub</a><a class="button button-ghost" href="mailto:matheus2019souz@gmail.com"><i data-lucide="mail"></i> E-mail</a></div></div></section>
     </main>
-
-    <footer class="py-6 border-t border-zinc-900 text-center text-zinc-600 text-xs">
-        <p>2024 © THEUZZ DEV</p>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const txt = "Java & Python Developer";
-            const el = document.getElementById('typewriter');
-            let i = 0;
-            const type = () => {
-                if(i < txt.length) {
-                    el.innerHTML += txt.charAt(i);
-                    i++;
-                    setTimeout(type, 80);
-                }
-            };
-            setTimeout(type, 300);
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        });
-    </script>
+    <footer class="footer section-shell"><span>© 2026 Matheus Nascimento</span><span>feito com HTML, CSS & JavaScript</span><a href="#inicio">voltar ao topo <i data-lucide="arrow-up"></i></a></footer>
+    <script src="script.js"></script>
 </body>
 </html>
